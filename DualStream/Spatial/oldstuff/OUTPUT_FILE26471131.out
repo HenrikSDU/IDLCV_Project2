@@ -1,0 +1,63 @@
+The code will run on GPU.
+Downloading: "https://download.pytorch.org/models/efficientnet_b7_lukemelas-c5b4e57e.pth" to /zhome/f2/a/224066/.cache/torch/hub/checkpoints/efficientnet_b7_lukemelas-c5b4e57e.pth
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26471131: <DualStreamSpatialNetTransfer> in cluster <dcc> Exited
+
+Job <DualStreamSpatialNetTransfer> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Mon Oct 13 21:22:57 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Mon Oct 13 21:22:59 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/DualStream/Spatial> was used as the working directory.
+Started at Mon Oct 13 21:22:59 2025
+Terminated at Mon Oct 13 21:37:02 2025
+Results reported at Mon Oct 13 21:37:02 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J DualStreamSpatialNetTransfer
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNetTransfer.py
+
+------------------------------------------------------------
+
+TERM_RUNLIMIT: job killed after reaching LSF run time limit.
+Exited with exit code 140.
+
+Resource usage summary:
+
+    CPU time :                                   825.00 sec.
+    Max Memory :                                 1114 MB
+    Average Memory :                             1008.00 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               80806.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   918 sec.
+    Turnaround time :                            845 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26471131.err> for stderr output of this job.
+

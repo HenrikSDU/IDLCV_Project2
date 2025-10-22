@@ -1,0 +1,84 @@
+The code will run on GPU.
+Len of trainset: 5000
+Training of spatial stream net is starting and will be carried out on: cuda:0
+Epoch of spatial stream: 0; Loss train: 2.427	 test: 2.318	 Accuracy train: 5.3%	 test: 7.3%
+Epoch of spatial stream: 1; Loss train: 2.355	 test: 2.310	 Accuracy train: 8.2%	 test: 8.2%
+Epoch of spatial stream: 2; Loss train: 2.322	 test: 2.305	 Accuracy train: 10.5%	 test: 9.8%
+Epoch of spatial stream: 3; Loss train: 2.296	 test: 2.301	 Accuracy train: 12.8%	 test: 12.2%
+Epoch of spatial stream: 4; Loss train: 2.280	 test: 2.297	 Accuracy train: 15.5%	 test: 12.2%
+Epoch of spatial stream: 5; Loss train: 2.257	 test: 2.290	 Accuracy train: 17.3%	 test: 13.2%
+Epoch of spatial stream: 6; Loss train: 2.232	 test: 2.287	 Accuracy train: 20.3%	 test: 13.5%
+Epoch of spatial stream: 7; Loss train: 2.204	 test: 2.281	 Accuracy train: 22.0%	 test: 14.8%
+Epoch of spatial stream: 8; Loss train: 2.165	 test: 2.280	 Accuracy train: 25.9%	 test: 15.0%
+Epoch of spatial stream: 9; Loss train: 2.119	 test: 2.276	 Accuracy train: 29.5%	 test: 16.2%
+Epoch of spatial stream: 10; Loss train: 2.081	 test: 2.273	 Accuracy train: 32.3%	 test: 17.0%
+Epoch of spatial stream: 11; Loss train: 2.040	 test: 2.271	 Accuracy train: 34.4%	 test: 18.8%
+Epoch of spatial stream: 12; Loss train: 1.988	 test: 2.269	 Accuracy train: 38.5%	 test: 19.4%
+Epoch of spatial stream: 13; Loss train: 1.931	 test: 2.277	 Accuracy train: 41.5%	 test: 19.3%
+Epoch of spatial stream: 14; Loss train: 1.893	 test: 2.275	 Accuracy train: 43.3%	 test: 20.3%
+Epoch of spatial stream: 15; Loss train: 1.840	 test: 2.281	 Accuracy train: 45.7%	 test: 20.5%
+Epoch of spatial stream: 16; Loss train: 1.784	 test: 2.285	 Accuracy train: 49.1%	 test: 21.2%
+Epoch of spatial stream: 17; Loss train: 1.744	 test: 2.291	 Accuracy train: 51.8%	 test: 21.4%
+Epoch of spatial stream: 18; Loss train: 1.684	 test: 2.299	 Accuracy train: 55.8%	 test: 21.8%
+Epoch of spatial stream: 19; Loss train: 1.639	 test: 2.306	 Accuracy train: 55.9%	 test: 21.8%
+Code finished!
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26471652: <DualStreamSpatialNet> in cluster <dcc> Done
+
+Job <DualStreamSpatialNet> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Mon Oct 13 22:57:06 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Mon Oct 13 22:57:07 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/DualStream/Spatial> was used as the working directory.
+Started at Mon Oct 13 22:57:07 2025
+Terminated at Mon Oct 13 23:00:42 2025
+Results reported at Mon Oct 13 23:00:42 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J DualStreamSpatialNet
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   204.68 sec.
+    Max Memory :                                 1020 MB
+    Average Memory :                             1017.67 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               80900.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   283 sec.
+    Turnaround time :                            216 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26471652.err> for stderr output of this job.
+

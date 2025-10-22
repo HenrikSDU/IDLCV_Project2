@@ -1,0 +1,11 @@
+# Ignore all .jpg, .png, and .pt files
+*.jpg
+*.png
+*.pt
+WithLeakageDataset/ucf101/
+
+# But don't ignore these specific files
+!keep_this_image.jpg
+!important_diagram.png
+!model_checkpoint.pt
+/WithLeakageDataset/ucf101

@@ -1,0 +1,4 @@
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 287
+    )
+    ^
+SyntaxError: closing parenthesis ')' does not match opening parenthesis '[' on line 283

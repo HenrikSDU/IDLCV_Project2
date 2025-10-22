@@ -1,0 +1,84 @@
+The code will run on GPU.
+torch.Size([16, 18, 64, 64]) torch.Size([16])
+Training of temporal stream net is starting and will be carried out on: cuda:0
+Epoch of temporal stream: 0; Loss train: 2.265	 test: 2.243	 Accuracy train: 11.6%	 test: 28.3%
+Epoch of temporal stream: 1; Loss train: 2.167	 test: 2.148	 Accuracy train: 20.2%	 test: 25.8%
+Epoch of temporal stream: 2; Loss train: 2.119	 test: 2.093	 Accuracy train: 25.2%	 test: 28.3%
+Epoch of temporal stream: 3; Loss train: 2.014	 test: 2.049	 Accuracy train: 31.6%	 test: 32.5%
+Epoch of temporal stream: 4; Loss train: 1.974	 test: 2.005	 Accuracy train: 31.6%	 test: 30.0%
+Epoch of temporal stream: 5; Loss train: 1.871	 test: 2.001	 Accuracy train: 35.8%	 test: 27.5%
+Epoch of temporal stream: 6; Loss train: 1.753	 test: 1.859	 Accuracy train: 42.8%	 test: 35.8%
+Epoch of temporal stream: 7; Loss train: 1.683	 test: 1.843	 Accuracy train: 41.6%	 test: 32.5%
+Epoch of temporal stream: 8; Loss train: 1.585	 test: 1.805	 Accuracy train: 47.2%	 test: 35.0%
+Epoch of temporal stream: 9; Loss train: 1.451	 test: 1.689	 Accuracy train: 51.0%	 test: 47.5%
+Epoch of temporal stream: 10; Loss train: 1.376	 test: 1.677	 Accuracy train: 54.6%	 test: 40.8%
+Epoch of temporal stream: 11; Loss train: 1.283	 test: 1.542	 Accuracy train: 59.8%	 test: 48.3%
+Epoch of temporal stream: 12; Loss train: 1.224	 test: 1.551	 Accuracy train: 61.6%	 test: 51.7%
+Epoch of temporal stream: 13; Loss train: 1.127	 test: 1.496	 Accuracy train: 66.6%	 test: 49.2%
+Epoch of temporal stream: 14; Loss train: 1.111	 test: 1.509	 Accuracy train: 64.0%	 test: 50.8%
+Epoch of temporal stream: 15; Loss train: 1.011	 test: 1.409	 Accuracy train: 70.8%	 test: 55.0%
+Epoch of temporal stream: 16; Loss train: 1.001	 test: 1.410	 Accuracy train: 69.4%	 test: 53.3%
+Epoch of temporal stream: 17; Loss train: 0.926	 test: 1.399	 Accuracy train: 69.4%	 test: 54.2%
+Epoch of temporal stream: 18; Loss train: 0.835	 test: 1.352	 Accuracy train: 75.4%	 test: 56.7%
+Epoch of temporal stream: 19; Loss train: 0.805	 test: 1.335	 Accuracy train: 74.6%	 test: 57.5%
+Code finished!
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26457862: <DualStreamTemporalNet> in cluster <dcc> Done
+
+Job <DualStreamTemporalNet> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Sun Oct 12 13:55:21 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Sun Oct 12 13:55:22 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/DualStream> was used as the working directory.
+Started at Sun Oct 12 13:55:22 2025
+Terminated at Sun Oct 12 13:57:10 2025
+Results reported at Sun Oct 12 13:57:10 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J DualStreamTemporalNet
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/DualStream/DualStreamTemporalNet.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   96.69 sec.
+    Max Memory :                                 890 MB
+    Average Memory :                             879.33 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               81030.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   138 sec.
+    Turnaround time :                            109 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26457862.err> for stderr output of this job.
+

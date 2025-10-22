@@ -1,0 +1,79 @@
+The code will run on GPU.
+torch.Size([8, 18, 64, 64]) torch.Size([8])
+Training of temporal stream net is starting and will be carried out on: cuda:0
+Epoch of temporal stream: 0; Loss train: 2.266	 test: 2.088	 Accuracy train: 12.4%	 test: 25.0%
+Epoch of temporal stream: 1; Loss train: 1.891	 test: 1.737	 Accuracy train: 33.8%	 test: 40.0%
+Epoch of temporal stream: 2; Loss train: 1.548	 test: 1.525	 Accuracy train: 48.0%	 test: 46.7%
+Epoch of temporal stream: 3; Loss train: 1.283	 test: 1.473	 Accuracy train: 54.6%	 test: 48.3%
+Epoch of temporal stream: 4; Loss train: 1.044	 test: 1.524	 Accuracy train: 63.0%	 test: 53.3%
+Epoch of temporal stream: 5; Loss train: 0.893	 test: 1.682	 Accuracy train: 67.2%	 test: 50.0%
+Epoch of temporal stream: 6; Loss train: 0.767	 test: 1.410	 Accuracy train: 72.4%	 test: 48.3%
+Epoch of temporal stream: 7; Loss train: 0.725	 test: 1.725	 Accuracy train: 74.8%	 test: 48.3%
+Epoch of temporal stream: 8; Loss train: 0.662	 test: 1.829	 Accuracy train: 77.4%	 test: 50.0%
+Epoch of temporal stream: 9; Loss train: 0.553	 test: 1.619	 Accuracy train: 81.8%	 test: 55.0%
+Epoch of temporal stream: 10; Loss train: 0.480	 test: 1.782	 Accuracy train: 83.2%	 test: 51.7%
+Epoch of temporal stream: 11; Loss train: 0.448	 test: 1.766	 Accuracy train: 84.4%	 test: 53.3%
+Epoch of temporal stream: 12; Loss train: 0.354	 test: 1.801	 Accuracy train: 88.6%	 test: 55.0%
+Epoch of temporal stream: 13; Loss train: 0.312	 test: 2.173	 Accuracy train: 89.8%	 test: 50.0%
+Epoch of temporal stream: 14; Loss train: 0.319	 test: 1.959	 Accuracy train: 89.2%	 test: 52.5%
+Code finished!
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26456885: <DualStreamTemporalNet> in cluster <dcc> Done
+
+Job <DualStreamTemporalNet> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Sat Oct 11 20:25:49 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Sat Oct 11 20:25:49 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/DualStream> was used as the working directory.
+Started at Sat Oct 11 20:25:49 2025
+Terminated at Sat Oct 11 20:27:16 2025
+Results reported at Sat Oct 11 20:27:16 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J DualStreamTemporalNet
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/DualStream/DualStreamTemporalNet.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   79.38 sec.
+    Max Memory :                                 827 MB
+    Average Memory :                             827.00 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               81093.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   201 sec.
+    Turnaround time :                            87 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26456885.err> for stderr output of this job.
+

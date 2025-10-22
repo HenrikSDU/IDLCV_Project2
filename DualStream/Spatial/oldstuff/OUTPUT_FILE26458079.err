@@ -1,0 +1,28 @@
+Traceback (most recent call last):
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 337, in <module>
+    out = train_spatialstream(sporty_spatialstream, optimizer,
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 162, in train_spatialstream
+    for minibatch_no, (data, target) in enumerate(train_loader):
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/utils/data/dataloader.py", line 734, in __next__
+    data = self._next_data()
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/utils/data/dataloader.py", line 790, in _next_data
+    data = self._dataset_fetcher.fetch(index)  # may raise StopIteration
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 52, in fetch
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/utils/data/_utils/fetch.py", line 52, in <listcomp>
+    data = [self.dataset[idx] for idx in possibly_batched_index]
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 223, in __getitem__
+    frame = self.transform(frame) if self.transform else T.ToTensor()(frame)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torchvision/transforms/transforms.py", line 95, in __call__
+    img = t(img)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torchvision/transforms/transforms.py", line 277, in forward
+    return F.normalize(tensor, self.mean, self.std, self.inplace)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torchvision/transforms/functional.py", line 350, in normalize
+    return F_t.normalize(tensor, mean=mean, std=std, inplace=inplace)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torchvision/transforms/_functional_tensor.py", line 921, in normalize
+    std = torch.as_tensor(std, dtype=dtype, device=tensor.device)
+TypeError: must be real number, not ColorJitter

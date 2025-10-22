@@ -1,0 +1,4 @@
+Traceback (most recent call last):
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 238, in <module>
+    frameimage_dataset_train = FrameImageDataset(root_dir=root_dir, split='train', transform=transform, stack_frames=True)
+TypeError: __init__() got an unexpected keyword argument 'stack_frames'

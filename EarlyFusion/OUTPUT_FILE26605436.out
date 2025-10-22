@@ -1,0 +1,79 @@
+The code will run on GPU.
+torch.Size([8, 30, 64, 64])
+Training will be carried out on: cuda:0
+Loss train: 2.281	 test: 2.287	 Accuracy train: 13.4%	 test: 11.7%
+Loss train: 2.152	 test: 2.258	 Accuracy train: 39.0%	 test: 17.5%
+Loss train: 1.976	 test: 2.227	 Accuracy train: 57.0%	 test: 15.8%
+Loss train: 1.749	 test: 2.206	 Accuracy train: 68.2%	 test: 18.3%
+Loss train: 1.526	 test: 2.182	 Accuracy train: 76.2%	 test: 19.2%
+Loss train: 1.300	 test: 2.217	 Accuracy train: 79.8%	 test: 20.8%
+Loss train: 1.052	 test: 2.210	 Accuracy train: 87.0%	 test: 19.2%
+Loss train: 0.822	 test: 2.221	 Accuracy train: 92.2%	 test: 18.3%
+Loss train: 0.680	 test: 2.228	 Accuracy train: 93.2%	 test: 16.7%
+Loss train: 0.508	 test: 2.246	 Accuracy train: 97.6%	 test: 15.8%
+Loss train: 0.390	 test: 2.221	 Accuracy train: 99.2%	 test: 16.7%
+Loss train: 0.281	 test: 2.276	 Accuracy train: 99.4%	 test: 20.0%
+Loss train: 0.238	 test: 2.251	 Accuracy train: 99.4%	 test: 20.0%
+Loss train: 0.171	 test: 2.280	 Accuracy train: 99.8%	 test: 19.2%
+Loss train: 0.150	 test: 2.291	 Accuracy train: 99.6%	 test: 20.0%
+Code finished!
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26605436: <EarlyFusion> in cluster <dcc> Done
+
+Job <EarlyFusion> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Wed Oct 22 20:04:34 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Wed Oct 22 20:10:02 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/EarlyFusion> was used as the working directory.
+Started at Wed Oct 22 20:10:02 2025
+Terminated at Wed Oct 22 20:11:51 2025
+Results reported at Wed Oct 22 20:11:51 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J EarlyFusion
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/EarlyFusion/EarlyFusion.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   96.95 sec.
+    Max Memory :                                 832 MB
+    Average Memory :                             832.00 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               81088.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                9
+    Run time :                                   110 sec.
+    Turnaround time :                            437 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26605436.err> for stderr output of this job.
+

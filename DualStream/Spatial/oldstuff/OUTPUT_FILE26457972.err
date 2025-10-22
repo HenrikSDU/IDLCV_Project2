@@ -1,0 +1,26 @@
+Traceback (most recent call last):
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 282, in <module>
+    out = train_spatialstream(sporty_spatialstream, optimizer,
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 114, in train_spatialstream
+    output = model(data)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 87, in forward
+    x = self.convolutional(x)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/container.py", line 244, in forward
+    input = module(input)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/modules/batchnorm.py", line 193, in forward
+    return F.batch_norm(
+  File "/zhome/f2/a/224066/IDLCV/lib64/python3.9/site-packages/torch/nn/functional.py", line 2817, in batch_norm
+    return torch.batch_norm(
+RuntimeError: running_mean should contain 64 elements not 256

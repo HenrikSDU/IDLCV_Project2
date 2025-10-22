@@ -1,0 +1,78 @@
+The code will run on GPU.
+torch.Size([8, 3, 10, 64, 64]) torch.Size([8])
+Training will be carried out on: cuda:0
+Epoch: 0; Loss train: 2.169	 test: 2.215	 Accuracy train: 24.0%	 test: 16.7%
+Epoch: 1; Loss train: 1.552	 test: 2.494	 Accuracy train: 53.2%	 test: 20.0%
+Epoch: 2; Loss train: 0.910	 test: 2.335	 Accuracy train: 78.0%	 test: 20.8%
+Epoch: 3; Loss train: 0.462	 test: 2.659	 Accuracy train: 91.2%	 test: 20.8%
+Epoch: 4; Loss train: 0.207	 test: 2.506	 Accuracy train: 97.4%	 test: 25.0%
+Epoch: 5; Loss train: 0.101	 test: 2.583	 Accuracy train: 99.0%	 test: 25.8%
+Epoch: 6; Loss train: 0.058	 test: 2.768	 Accuracy train: 100.0%	 test: 23.3%
+Epoch: 7; Loss train: 0.033	 test: 2.903	 Accuracy train: 99.8%	 test: 27.5%
+Epoch: 8; Loss train: 0.024	 test: 3.022	 Accuracy train: 100.0%	 test: 23.3%
+Epoch: 9; Loss train: 0.017	 test: 2.903	 Accuracy train: 100.0%	 test: 22.5%
+Epoch: 10; Loss train: 0.013	 test: 3.040	 Accuracy train: 100.0%	 test: 25.0%
+Epoch: 11; Loss train: 0.010	 test: 2.988	 Accuracy train: 100.0%	 test: 29.2%
+Epoch: 12; Loss train: 0.007	 test: 3.058	 Accuracy train: 100.0%	 test: 25.0%
+Epoch: 13; Loss train: 0.005	 test: 3.048	 Accuracy train: 100.0%	 test: 26.7%
+Epoch: 14; Loss train: 0.006	 test: 3.038	 Accuracy train: 100.0%	 test: 27.5%
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26605432: <3DCNN> in cluster <dcc> Done
+
+Job <3DCNN> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Wed Oct 22 20:01:38 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Wed Oct 22 20:01:44 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/EarlyFusion> was used as the working directory.
+Started at Wed Oct 22 20:01:44 2025
+Terminated at Wed Oct 22 20:10:01 2025
+Results reported at Wed Oct 22 20:10:01 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J 3DCNN
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/3DCNN/3DCNN.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   316.02 sec.
+    Max Memory :                                 858 MB
+    Average Memory :                             719.33 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               81062.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   513 sec.
+    Turnaround time :                            503 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26605432.err> for stderr output of this job.
+

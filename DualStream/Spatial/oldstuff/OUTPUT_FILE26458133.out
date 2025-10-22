@@ -1,0 +1,79 @@
+The code will run on GPU.
+Len of trainset: 5000
+Training of spatial stream net is starting and will be carried out on: cuda:0
+Epoch of spatial stream: 0; Loss train: 2.340	 test: 2.336	 Accuracy train: 14.0%	 test: 10.5%
+Epoch of spatial stream: 1; Loss train: 2.375	 test: 2.308	 Accuracy train: 6.4%	 test: 10.0%
+Epoch of spatial stream: 2; Loss train: 2.331	 test: 2.316	 Accuracy train: 9.4%	 test: 15.8%
+Epoch of spatial stream: 3; Loss train: 2.282	 test: 2.366	 Accuracy train: 11.0%	 test: 15.8%
+Epoch of spatial stream: 4; Loss train: 2.226	 test: 2.429	 Accuracy train: 12.7%	 test: 14.8%
+Epoch of spatial stream: 5; Loss train: 2.150	 test: 2.483	 Accuracy train: 15.5%	 test: 16.4%
+Epoch of spatial stream: 6; Loss train: 2.055	 test: 2.567	 Accuracy train: 19.6%	 test: 16.4%
+Epoch of spatial stream: 7; Loss train: 1.953	 test: 2.608	 Accuracy train: 24.9%	 test: 16.7%
+Epoch of spatial stream: 8; Loss train: 1.826	 test: 2.762	 Accuracy train: 32.9%	 test: 15.8%
+Epoch of spatial stream: 9; Loss train: 1.708	 test: 2.781	 Accuracy train: 40.5%	 test: 15.4%
+Epoch of spatial stream: 10; Loss train: 1.560	 test: 2.970	 Accuracy train: 48.1%	 test: 15.4%
+Epoch of spatial stream: 11; Loss train: 1.445	 test: 3.089	 Accuracy train: 55.2%	 test: 14.1%
+Epoch of spatial stream: 12; Loss train: 1.320	 test: 3.449	 Accuracy train: 62.2%	 test: 14.1%
+Epoch of spatial stream: 13; Loss train: 1.246	 test: 3.590	 Accuracy train: 66.6%	 test: 15.2%
+Epoch of spatial stream: 14; Loss train: 1.183	 test: 3.586	 Accuracy train: 71.1%	 test: 14.7%
+Code finished!
+
+------------------------------------------------------------
+Sender: LSF System <lsfadmin@hpc.dtu.dk>
+Subject: Job 26458133: <DualStreamSpatialNet> in cluster <dcc> Done
+
+Job <DualStreamSpatialNet> was submitted from host <n-62-11-12> by user <s253818> in cluster <dcc> at Sun Oct 12 19:13:07 2025
+Job was executed on host(s) <4*n-62-18-13>, in queue <c02516>, as user <s253818> in cluster <dcc> at Sun Oct 12 19:13:08 2025
+</zhome/f2/a/224066> was used as the home directory.
+</zhome/f2/a/224066/Project2/DualStream/Spatial> was used as the working directory.
+Started at Sun Oct 12 19:13:08 2025
+Terminated at Sun Oct 12 19:19:58 2025
+Results reported at Sun Oct 12 19:19:58 2025
+
+Your job looked like:
+
+------------------------------------------------------------
+# LSBATCH: User input
+#!/bin/sh
+### ------------- specify queue name ----------------
+#BSUB -q c02516
+### ------------- specify gpu request----------------
+#BSUB -gpu "num=1:mode=exclusive_process"
+### ------------- specify job name ----------------
+#BSUB -J DualStreamSpatialNet
+### ------------- specify number of cores ----------------
+#BSUB -n 4
+#BSUB -R "span[hosts=1]"
+### ------------- specify CPU memory requirements ----------------
+#BSUB -R "rusage[mem=20GB]"
+### ------------- specify wall-clock time (max allowed is 12:00)---------------- #BSUB -W 12:00
+#BSUB -o OUTPUT_FILE%J.out
+#BSUB -e OUTPUT_FILE%J.err
+source /zhome/f2/a/224066/IDLCV/bin/activate
+python /zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py
+
+------------------------------------------------------------
+
+Successfully completed.
+
+Resource usage summary:
+
+    CPU time :                                   397.54 sec.
+    Max Memory :                                 1118 MB
+    Average Memory :                             1080.50 MB
+    Total Requested Memory :                     81920.00 MB
+    Delta Memory :                               80802.00 MB
+    Max Swap :                                   -
+    Max Processes :                              4
+    Max Threads :                                8
+    Run time :                                   493 sec.
+    Turnaround time :                            411 sec.
+
+The output (if any) is above this job summary.
+
+
+
+PS:
+
+Read file <OUTPUT_FILE26458133.err> for stderr output of this job.
+

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 265, in <module>
+    sporty_spatialstream = SportySpatialStreamNet()
+  File "/zhome/f2/a/224066/Project2/DualStream/Spatial/DualStreamSpatialNet.py", line 51, in __init__
+    nn.BatchNorm2d(2*2*3*T*2),
+TypeError: unsupported operand type(s) for *: 'int' and 'module'
